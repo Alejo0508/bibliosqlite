@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 SQLiteDatabase bd = osql.getReadableDatabase();  // se crea variable para instanciar el osql para que lea la informacion de la base de datos
-                String sql = "select rol, email from usuario where email = '"+memail+"' and clave = '"+mpass+"'";
+
+                String sql = "select rol, email from usuario where email = '"+memail+"' and clave = '"+mpass+"'"; // aca buscara en la base de datos y comparara el email y contraseña
 
                 Cursor cuinisiar = bd.rawQuery(sql,null);
 

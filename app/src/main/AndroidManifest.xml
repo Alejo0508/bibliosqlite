@@ -9,9 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listados"></activity>
-        <activity android:name=".actmaterial" />
-        <activity android:name=".actusuario" />
+        <activity android:name=".listados">
+            <!--se crea meta data para crear una flecha que nos lleve a la actividad anterior-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".actusuario"/>
+        </activity>
+        <activity android:name=".actmaterial">
+            <!--se crea meta data para crear una flecha que nos lleve a la actividad anterior-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".actusuario">
+            <!--se crea meta data para crear una flecha que nos lleve a la actividad anterior-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -204,6 +204,7 @@ public class actusuario extends AppCompatActivity {
 
         MenuInflater infcrud = getMenuInflater(); // esto crea una variable apra inflar el menu
         infcrud.inflate(R.menu.menu_crud, menu);  // esto trae el archivo xml menu_crud desde la carpeta menu
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -241,6 +242,7 @@ public class actusuario extends AppCompatActivity {
     }
 
     private void metidoagregarusuario() {
+
         if (!emailu.getText().toString().isEmpty() && !nombreu.getText().toString().isEmpty() && !passu.getText().toString().isEmpty() && adminu.isChecked() || usuu.isChecked())
         {
             //instanciar un objeto de la clase base de datos para que guarde datos en ella -------- linea 17 ---------
@@ -255,10 +257,13 @@ public class actusuario extends AppCompatActivity {
             Cursor cusuari = bd.rawQuery(sql, null);
 
             // verifica si la tabla cursor tiene al menos 1 registro
-            if (cusuari.moveToFirst()) {
+            if (cusuari.moveToFirst())
+            {
                 // el email ya se encuentra registrado
                 Toast.makeText(getApplicationContext(), "¡Error!. Email asignado a otro usuario", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+            else
+                {
 
                 // instanciar objeto de la BD para guardar el usuario si no existe en modo escritura
                 SQLiteDatabase bd1 = osql.getWritableDatabase();

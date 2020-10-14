@@ -52,7 +52,7 @@ public class listadomaterial extends AppCompatActivity {
 
             SQLiteDatabase bd = osql.getReadableDatabase();
 
-            String sql = "select idmat, nombre, genero from material";  // aca le decimos que nos traiga todos los elementos de la tabla usuario, por eso el *
+            String sql = "select idmat, nombre, genero, email from material";  // aca le decimos que nos traiga todos los elementos de la tabla usuario, por eso el *
 
             Cursor curlistado = bd.rawQuery(sql,null);
 
@@ -69,7 +69,7 @@ public class listadomaterial extends AppCompatActivity {
                     }
 
                     // el numero que va en () es la posicion del array que deben traer, si quiero que me traiga varios datos debo hacer varias lienas
-                    String registro = "              "+ curlistado.getString(0) + "              " + curlistado.getString(1)  + "               " + generomat;
+                    String registro = "     "+ curlistado.getString(0) + "      " + curlistado.getString(1)  + "     " + generomat + "   "+ curlistado.getString(3);
 
                     datos.add(registro); // esta liena es la que añade lo que traiga de la BD en el arreglo
                 }
